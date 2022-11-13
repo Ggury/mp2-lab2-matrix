@@ -25,7 +25,7 @@ protected:
 public:
   TDynamicVector(size_t size = 1) : sz(size)
   {
-    if (sz == 0)
+    if (sz <= 0)
         throw out_of_range("Vector size should be greater than zero");
     if (sz >= MAX_VECTOR_SIZE)
         throw out_of_range("Vector size should be less then 100 000 000");
@@ -232,7 +232,7 @@ public:
   }
 
   // матрично-скалярные операции
-  TDynamicMatrix<T> operator*(const T& val)
+  TDynamicMatrix operator*(const T& val)
   {
       TDynamicMatrix _temp(sz);
 
@@ -288,10 +288,9 @@ public:
   // ввод/вывод
   friend istream& operator>>(istream& istr, TDynamicMatrix& v)
   {
-      for (int i = 0; i < sz; i++)
-      {
-          istr >> v.[i];
-      }
+      for (int i = 0; i < v.sz; i++)
+          for (int j = 0; j < v.sz; j++)
+              istr >> v.pMem[i][j];
       return istr;
   }
   friend ostream& operator<<(ostream& ostr, const TDynamicMatrix& v)

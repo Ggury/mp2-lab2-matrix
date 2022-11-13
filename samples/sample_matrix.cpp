@@ -10,38 +10,35 @@
 
 void main()
 {
-  TDynamicMatrix<int> a(5), b(5), c(5), g(5), h(5);
-  TDynamicVector<int> d(5), e(5);
-  int i, j;
-  int f = 4;
 
-
+  int type1;
+  char type2;
+  char type3;
   setlocale(LC_ALL, "Russian");
   cout << "Тестирование класс работы с матрицами"
     << endl;
-  for (i = 0; i < 5; i++)
-    for (j = i; j < 5; j++ )
-    {
-      a[i][j] =  i * 10 + j;
-      b[i][j] = (i * 10 + j) * 100;
-    }
-
-  for (i = 0; i < 5; i++)
+  cout << "Введите  размер матриц" << endl;
+  cin >> type1;
+  TDynamicMatrix<int> data_1(type1);
+  TDynamicMatrix<int> data_2(type1);
+  cout << "Задайте матрицу 1:" << endl;
+  cin >> data_1;
+  cout << "Matrix 1 =" << data_1 << endl;
+  cout << "Задайте матрицу 2:" << endl;
+  cin >> data_2;
+  cout << "Введите тип опреации" << endl;
+  cin >> type3;
+  switch (type3)
   {
-      d[i] = i * 3 + 2;
+  case '+':
+      cout << "Сумма:"<<data_1 + data_2 <<endl ;
+      break;
+  case '-':
+      cout << "Разность:" << data_1 - data_2 << endl;
+      break;
+  case '*':
+      cout << "Произведение:" << data_1 * data_2 << endl;
+      break;
   }
-  
-  c = a * b;
-  e = a * d;
-  g = a * f;
-  h = a + b;
-  cout << "матрица a = " << endl << a << endl;
-  cout << "Матрица b = " << endl << b << endl;
-  cout << "Вектор d = " << endl << d << endl;
-  cout << "Число f = " << endl << f << endl;
-  cout << "Произведение матрицы а на число f " << endl << g << endl;
-  cout << "Произведение матрицы а на вектор d " << endl << e << endl;
-  cout << "Произведение матриц а и б " << endl << c << endl;
-  cout << "Сумма матриц а и б " << endl << h << endl;
 }
 //---------------------------------------------------------------------------
