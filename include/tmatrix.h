@@ -160,7 +160,7 @@ public:
           _temp.pMem[i] -= v.pMem[i];
       return _temp;
   }
-  T operator*(const TDynamicVector& v) noexcept(noexcept(T()))
+  T operator*(const TDynamicVector& v)
   {
       if (sz != v.sz)
           throw invalid_argument("vector lengths are not equal");
