@@ -31,13 +31,13 @@ void main()
   switch (type3)
   {
   case '+':
-      cout << "Сумма:"<<data_1 + data_2 <<endl ;
+      cout << "Сумма:"<<endl<<data_1 + data_2 <<endl ;
       break;
   case '-':
-      cout << "Разность:" << data_1 - data_2 << endl;
+      cout << "Разность:" << endl<< data_1 - data_2 << endl;
       break;
   case '*':
-      cout << "Произведение:" << data_1 * data_2 << endl;
+      cout << "Произведение:" << endl<< data_1 * data_2 << endl;
       break;
   }
 }
