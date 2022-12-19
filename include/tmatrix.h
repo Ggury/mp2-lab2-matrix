@@ -203,7 +203,7 @@ public:
   TDynamicMatrix(size_t s = 1) : TDynamicVector<TDynamicVector<T>>(s)
   {
       if (sz <= 0 || sz >= MAX_MATRIX_SIZE)
-          throw out_of_range("size must be greater than 0 and less than 10 000");
+          throw out_of_range("size must be greater   than 0 and less than 10 000");
     for (size_t i = 0; i < sz; i++)
       pMem[i] = TDynamicVector<T>(sz);
   }
